@@ -29,6 +29,9 @@ This repository is structured so it can be imported as a project using the
 
 Typical workflow:
 - Import/open the project in VS Code using the Torizon extension
+- Ensure automatic reboot is disabled in Aktualizr, so the UI can handle the NEED_COMPLETION state:
+  - Follow this documentation to disable automatic reboot:
+    https://developer.toradex.com/torizon/torizon-platform/torizon-updates/aktualizr-modifying-the-settings-of-torizon-ota-client/#enabling-and-disabling-automatic-reboot
 - Deploy the log forwarder to the target device:
   - Copy `forward_aktualizr_logs.sh` to the device
   - Install and enable `forward-aktualizr-logs.service`
