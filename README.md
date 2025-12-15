@@ -243,3 +243,7 @@ This repository is a **proof of concept**.
 - Not intended for production use
 - No hardening, security review, or long-term persistence guarantees
 - Designed to demonstrate behavior, flow, and API usage only
+
+## License
+
+This project is licensed under the MIT License.
