@@ -1,0 +1,38 @@
+[Unit]
+Description=Forward Aktualizr journald logs to a plain text file (Update Supervisor PoC)
+After=systemd-journald.service
+Wants=systemd-journald.service
+
+# If your system needs networking before Aktualizr starts, you may also add:
+# After=network-online.target
+# Wants=network-online.target
+
+[Service]
+Type=simple
+
+# IMPORTANT:
+# Set this path to where you install the script on the target system.
+# Recommended install path:
+#   /usr/local/bin/forward_aktualizr_logs.sh
+ExecStart=/usr/local/bin/forward_aktualizr_logs.sh
+
+# Environment overrides (optional).
+# Adjust unit name, log path, and rotation policy without editing the script.
+Environment=OTA_JOURNAL_UNIT=aktualizr-torizon
+Environment=BASE_DIR=/home/torizon/ota-progress
+Environment=OUT_FILE=/home/torizon/ota-progress/aktualizr.log
+Environment=MAX_SIZE_MB=20
+Environment=KEEP_FILES=5
+
+Restart=always
+RestartSec=2
+
+# If running as a non-root user, ensure it has permission to read journald logs.
+# You may need to:
+# - run as root, or
+# - add the user to the "systemd-journal" group, or
+# - configure journald ACLs (depends on distro).
+User=root
+
+[Install]
+WantedBy=multi-user.target
