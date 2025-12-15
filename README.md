@@ -19,8 +19,8 @@ deterministic behavior, and debuggability over completeness.
 
 ## Requirements
 
-- **Torizon OS 7.4 or newer** (minimum required)
-- Device configured for Aktualizr / Torizon Cloud OTA
+- A target device running **Torizon OS 7.4**
+- The device is **provisioned in Torizon Cloud**
 
 ### Development workflow (Torizon VS Code Extension)
 
@@ -29,8 +29,11 @@ This repository is structured so it can be imported as a project using the
 
 Typical workflow:
 - Import/open the project in VS Code using the Torizon extension
+- Deploy the log forwarder to the target device:
+  - Copy `forward_aktualizr_logs.sh` to the device
+  - Install and enable `forward-aktualizr-logs.service`
 - Build and run the application using the extension's tasks
-- Deploy to a target device running Torizon OS
+- Deploy the application to a target device running Torizon OS
 
 ## Scope and Design Goals
 
