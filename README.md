@@ -1,3 +1,5 @@
+![Update Supervisor UI](docs/images/update-supervisor.png)
+
 # Update Supervisor – Aktualizr D-Bus UI (Proof of Concept)
 
 This project is a **proof of concept (PoC)** demonstrating how to build a graphical
